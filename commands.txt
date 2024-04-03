@@ -1,0 +1,1 @@
+executar tarefas asinble: playbook.yml -u *user* --private-key *key*.pem -i hosts.yml 
