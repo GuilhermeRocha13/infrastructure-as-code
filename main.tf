@@ -16,8 +16,13 @@ provider "aws" {
 resource "aws_instance" "app_server" {
   ami           = "ami-830c94e3"
   instance_type = "t2.micro"
+  user_data = <<-EOF
+                  #!/bin/bash
+                        cd /home/ubuntu
+                        echo "<h1>web-server test </h1>" > index.html
+                  EOF
 
   tags = {
-    Name = "ExampleAppServerInstance"
+    #Name = #"ExampleAppServerInstance"
   }
 }
