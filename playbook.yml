@@ -6,3 +6,12 @@
     content: <h1>ansible test</h1>
   - name: server create
      shell: "nohup busybox httdp - f -p 8080 &"
+
+  - name: Instalando o python3, virtualenv
+  apt:
+    pkg:
+    - python3
+    - virtualenv
+    update_cache: yes
+    become: yes
+
